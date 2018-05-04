@@ -7,7 +7,7 @@ public class Hand {
     }
 
     //starting hand
-    String new_hand(){
+    void new_hand(){
         for(int i = 0; i < 7; i++){
             int j = 0;
             while(true){
@@ -25,10 +25,12 @@ public class Hand {
     }
 
     //print
-    System.out.println("You have:");
-    for (int i = 0; i < 7; i++) {
-        if (hand[i] != "0") {
-            System.out.print(hand[i] + " | ");
+    void printHand(){
+        System.out.println("You have:");
+        for (int i = 0; i < 7; i++) {
+            if (hand[i] != "0") {
+                System.out.print(hand[i] + " | ");
+            }
         }
     }
 
