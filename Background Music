@@ -1,0 +1,20 @@
+PlaySound("sleep_away.wav", NULL, SND_FILENAME|SND_LOOP|SND_ASYNC);
+/* or this :
+  #include <iostream>
+#include <thread>
+
+void play_music() {
+  PlaySound("sleep_away.wav", NULL, SND_FILENAME|SND_LOOP);
+}
+
+int main(int argc, char* argv[])
+{
+  std::thread t(play_music);
+
+  // other code
+
+  t.join();
+
+    return 0;
+}
+*/
