@@ -19,7 +19,7 @@ public class Deck {
             System.out.println(deck[i]);
         }
 
-        //shuffle (?)
+        //shuffle
         for(int i = 0; i < size; i++){
             int r = i + (int) (Math.random() * (size-i));
             String temp = deck[r];
