@@ -35,7 +35,7 @@ public class Hand {
     }
 
     //draw a card *Add the initial hand sizes' total to i to save time
-    int i = 7;
+    int i = 13;
     while(true){
         if (deck[i] != "0") {
             int j = 0;
