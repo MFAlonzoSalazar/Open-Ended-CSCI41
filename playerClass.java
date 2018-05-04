@@ -4,33 +4,33 @@ public class Player
 	private int score = 0;
 	private int[] cards = new int[7];
 
-	public final String getPlayer()
+	public String getPlayer()
 	{
 		return player;
 	}
 
-	public final void setplayer(String newPlayer)
+	public void setplayer(String newPlayer)
 	{
 		player = newPlayer;
 	}
 
-	public final int getScore()
+	public int getScore()
 	{
 		return score;
 	}
 
-	public final void set(int newScore)
+	public void set(int newScore)
 	{
 		score = newScore;
 	}
 
 
-	public final int getcards()
+	public int getcards()
 	{
 		return cards;
 	}
 
-	public final void set(int newCards)
+	public void set(int newCards)
 	{
 		cards = newCards
 	}
