@@ -2,7 +2,7 @@ public class Player
 {
 	private String player = "";
 	private int score = 0;
-	private int[] cards = new int[7];
+	Hand playerHand;
 
 	public String getPlayer()
 	{
