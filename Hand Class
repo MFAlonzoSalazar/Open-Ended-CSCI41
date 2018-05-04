@@ -1,0 +1,57 @@
+public class Hand {
+    String[] hand = new String[25];
+
+    //initialize
+    for(int i = 0; i < 25; i++){
+        hand[i] = "0";
+    }
+
+    //starting hand
+    String new_hand(){
+        for(int i = 0; i < 7; i++){
+            int j = 0;
+            while(true){
+                if(deck[j] != "0"){
+                    hand[i] = deck[j];
+                    deck[j] = "0";
+                    break;
+                }
+                else{
+                    j++;
+                }
+            }
+        }
+
+    }
+
+    //print
+    System.out.println("You have:");
+    for (int i = 0; i < 7; i++) {
+        if (hand[i] != "0") {
+            System.out.print(hand[i] + " | ");
+        }
+    }
+
+    //draw a card *Add the initial hand sizes' total to i to save time
+    int i = 7;
+    while(true){
+        if (deck[i] != "0") {
+            int j = 0;
+            while(true){
+                if(hand[j] == "0"){
+                    hand[j] = deck[i];
+                    break;
+                }
+                else{
+                    j++;
+                }
+            }
+            deck[i] = "0";
+            break;
+        } else {
+            i++;
+        }
+    }
+
+
+}
