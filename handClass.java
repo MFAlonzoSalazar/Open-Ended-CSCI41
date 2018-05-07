@@ -2,10 +2,12 @@ public class Hand {
     String[] hand = new String[25];
 
     //initialize
-    for(int i = 0; i < 25; i++){
-        hand[i] = "0";
+    void init(){
+        for(int i = 0; i < 25; i++){
+            hand[i] = "0";
+        }
     }
-
+    
     //starting hand
     void new_hand(){
         for(int i = 0; i < 7; i++){
@@ -35,25 +37,27 @@ public class Hand {
     }
 
     //draw a card *Add the initial hand sizes' total to i to save time
-    int i = 13;
-    while(true){
-        if (deck[i] != "0") {
-            int j = 0;
-            while(true){
-                if(hand[j] == "0"){
-                    hand[j] = deck[i];
-                    break;
+    
+    void fish(){
+        int i = 13;
+        while(true){
+            if (deck[i] != "0") {
+                int j = 0;
+                while(true){
+                    if(hand[j] == "0"){
+                        hand[j] = deck[i];
+                        break;
+                    }
+                    else{
+                        j++;
+                    }
                 }
-                else{
-                    j++;
-                }
+                deck[i] = "0";
+                break;
+            } else {
+                i++;
             }
-            deck[i] = "0";
-            break;
-        } else {
-            i++;
         }
     }
-
 
 }
