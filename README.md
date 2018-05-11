@@ -1,6 +1,6 @@
 # Open-Ended-CSCI41
 
-Go Fish
+Project: Go Fish
 
 Roles:
 
