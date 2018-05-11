@@ -9,6 +9,6 @@ Fernanda - Leader
 
 Aaron - deck & hand classes
 
-Jacob - ADTs
+Jacob - deck class, hand class, and ADTs
 
 Dylan - Player class
