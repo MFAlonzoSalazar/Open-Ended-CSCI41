@@ -3,7 +3,7 @@ public class Main {
 	public static void main(String []args){
 		System.out.print("Welcome to Go Fish\n\nPlease enter your name:\n");
 		Scanner n = new Scanner(System.in);
-		string name = n.readLine();
+		String name = n.readLine();
 		//initiate hand & player here
 
 		//while(deck.size != 0){
