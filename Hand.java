@@ -1,63 +1,49 @@
 public class Hand {
-    String[] hand = new String[25];
-
-    //initialize
-    void init(){
-        for(int i = 0; i < 25; i++){
-            hand[i] = "0";
-        }
-    }
-    
-    //starting hand
-    void new_hand(){
-        for(int i = 0; i < 7; i++){
-            int j = 0;
-            while(true){
-                if(deck[j] != "0"){
-                    hand[i] = deck[j];
-                    deck[j] = "0";
-                    break;
-                }
-                else{
-                    j++;
-                }
-            }
-        }
-
-    }
-
-    //print
-    void printHand(){
-        System.out.println("You have:");
-        for (int i = 0; i < 7; i++) {
-            if (hand[i] != "0") {
-                System.out.print(hand[i] + " | ");
-            }
-        }
-    }
-
-    //draw a card *Add the initial hand sizes' total to i to save time
-    
-    void fish(){
-        int i = 13;
-        while(true){
-            if (deck[i] != "0") {
-                int j = 0;
-                while(true){
-                    if(hand[j] == "0"){
-                        hand[j] = deck[i];
-                        break;
-                    }
-                    else{
-                        j++;
-                    }
-                }
-                deck[i] = "0";
-                break;
-            } else {
-                i++;
-            }
-        }
-    }
-
+	private Card[] hand = new Card[26];
+	private last = 0;
+	//starting hand
+	public Hand(Deck deck) {
+		for (int i = 0; i < 26; i++) {
+			if (i < 7) hand[i] = deck.draw();
+			else hand[i] = new Card("", 0);
+			last++;
+		}
+	}
+	//print
+	public void print() {
+		System.out.println("You have:");
+		int i = 0;
+		while (hand[i].getRank() != 0 && i < last + 1) {
+			hand[i].print();
+			i++;
+		}
+	}
+	//add a card
+	public void push(Deck deck) {
+		while (hand[i].getRank() != 0) {
+			i++;
+		}
+		hand[i] = deck.draw();
+		last++;
+	}
+	//search for a card
+	public bool search(int x) {
+		int i = 0;
+		while (hand[i].getRank() != 0 && i < last + 1) {
+			if (hand[i].getRank() == x) return true;
+			else i++;
+		}
+		return false;
+	}
+	//remove a card
+	public void pop(int x) {
+		int i = 0;
+		while (hand[i].getRank() != 0 && i < last + 1) {
+			if (hand[i].getRank() == x) {
+				hand[i] = hand[last];
+				hand[last] = new Card("", 0)
+				break;
+			} else i++;
+		}
+	}
 }
